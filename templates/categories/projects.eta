@@ -1,15 +1,28 @@
 <section id="project">
-	<% if (it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle) { %>
+
+		<div class="item content content__container">
+		<div class="content__container__heading">
+			<% if (it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle) { %>
 		<h1><%= it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle %></h1>
-	<% } %>
-	<% it.resume?.projects.forEach(function(project) { %>
-		<div class="item content">
+	   <% } %>
+
+	
+			</div>
+			<div class="content__container__details">
+	        <% it.resume?.projects.forEach(function(project) { %>
+
 			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.project, showDelete: true, id: project.id}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
 				value: project.title,
 				showLabel: false,
 				id: 'project-title'
+			}) %>
+				<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
+				value: project.client,
+				showLabel: false,
+				id: 'project-client'
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
@@ -55,7 +68,9 @@
 				showLabel: false,
 				id: 'project-highlights',
 			}) %>
+				<% }) %>
+			</div>
 		</div>
-	<% }) %>
+
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.project}) %>
 </section>

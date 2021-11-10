@@ -1,18 +1,26 @@
 <section id="publications">
-	<% if(it.resume.settings?.labels?.categoryProperty?.publication?.categoryTitle) { %>
+
+        <div class="item content content__container">
+        <div class="content__container__heading">
+	    <% if(it.resume.settings?.labels?.categoryProperty?.publication?.categoryTitle) { %>
 		<h1>
 		    <%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %>
 		</h1>
-	<% } %>
-	<% it.resume?.publications.forEach(function(publication) { %>
-        <div class="item content">
+	    <% } %>
+
+        </div>
+        <div class="content__container__details">
+	     <% it.resume?.publications.forEach(function(publication) { %>
+
             <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true}) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.name, 
                 value: publication.name,
                 showLabel: false,
                 id: 'publication-name',
+                classes: "second__heading"
             }) %>
+
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
                 value: publication.publisher,
@@ -37,7 +45,9 @@
                 showLabel: false,
                 id: 'publication-summary',
             }) %>
+	     <% }) %>
+
+            </div>
         </div>
-	<% }) %>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.publication}) %>
 </section>

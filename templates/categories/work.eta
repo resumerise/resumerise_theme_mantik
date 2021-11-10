@@ -1,12 +1,16 @@
 <section id="work">
-    <% if (it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle) { %>
+    <div class="item content content__container">
+    <div class="content__container__heading">
+        <% if (it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle) { %>
         <h1><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></h1>
     <% } %>
-    <% it.resume?.work.forEach(function(work) { %>
-    <div class="item content">
+       </div>
+        <div class="content__container__details">
+         <% it.resume?.work.forEach(function(work) { %>
+
         <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work, showDelete: true, id: work.id}) %>
         <% if (work.company) { %>
-        <h2>
+        <h2 class="heading--black">
             <%= work.company %>
         </h2>
         <% } %>
@@ -16,13 +20,14 @@
             endDate: work.endDate,
             present: work.present,
             showLabel: false,
-            settings: it.resume.settings
+            settings: it.resume.settings,
+            classes: "second__heading"
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.work?.position, 
             value: work.position,
             showLabel: false,
-            id: 'work-position',
+            id: 'work-position'
         }) %>
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.work?.website, 
@@ -42,7 +47,9 @@
             showLabel: false,
 			id: 'work-highlights',
 		}) %>
-    </div>
     <% }) %>
+        
+        </div>
+    </div>
     <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
 </section>

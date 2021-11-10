@@ -1,17 +1,25 @@
 <section id="profiles">
-    <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
+
+        <div class='item content content__container'>
+        <div class="content__container__heading">
+            <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
         <h1>
             <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
         </h1>
-    <% } %>
-    <% it.resume.basics.profiles?.forEach(function(profile){ %>
-        <div class='item content'>
-            <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
+        <% } %>
+   
+  
+        </div>
+        <div class="content__container__details">
+         <% it.resume.basics.profiles?.forEach(function(profile){ %>
+
+                  <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.profile?.network, 
                 value: profile.network,
                 showLabel: false,
-                id: 'profile-network'
+                id: 'profile-network',
+                classes: "second__heading"
             }) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.profile?.username, 
@@ -25,7 +33,9 @@
                 showLabel: false,
                 id: 'profile-url'
             }) %>
+       <% }) %>
+
+            </div>
         </div>
-    <% }) %>
     <%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.profile}) %>
 </section>

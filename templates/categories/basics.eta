@@ -1,30 +1,41 @@
 <section id='basics'>
-    <%~ include('profile-picture', {
+        <%~ include('profile-picture', {
         picture: it.resume.basics.picture
     }) %>
+    <div class="item content content__container">
+    <div class="content__container__heading">
+
     <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
     <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
-        <h1><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
+        <h1 class="heading--black"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
     <% } %>
-    <div class="content">
-        <%~ include('key-value-item', {
+
+           <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
             value: it.resume.basics.name,
             showLabel: false,
-            id: 'basics-name'
+            id: 'basics-name',
+            classes: "second__heading"
         }) %>
+         <%~ include('key-value-item', {
+            label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
+            value: it.resume.basics.label,
+            showLabel: false,
+            id: 'basics-label',
+            classes: "second__heading"
+        }) %>
+    </div>
+    <div class="content__container__details">
+
+
+   
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
             value: it.resume.basics.website,
             showLabel: false,
             id: 'basics-website'
         }) %>
-        <%~ include('key-value-item', {
-            label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
-            value: it.resume.basics.label,
-            showLabel: false,
-            id: 'basics-label'
-        }) %>
+
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.email, 
             value: it.resume.basics.email,
@@ -43,5 +54,6 @@
             showLabel: false,
             id: 'basics-summary'
         }) %>
+        </div>
     </div>
 </section>
