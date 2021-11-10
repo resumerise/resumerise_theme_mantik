@@ -1,8 +1,7 @@
 :root {
-	--layout-padding: 40px;
+	--layout-padding: 3em;
 	--heading-font-size: 1.1em;
 	/* Smaller Font Size */
-	--smaller-heading-font-size: 1em;
 }
 
 /* layout */
@@ -76,12 +75,12 @@ li {
 }
 
 h1 {
-	font-size: 18px;
+	font-size: 1.05em;
 	margin-top: 0;
 }
 
 h2 {
-	font-size: 18px;
+	font-size: 1.05em;
 }
 
 .heading--black {
@@ -161,18 +160,10 @@ blockquote {
 	}
 
 	.content__container__details {
-		font-size: 14px;
+		font-size: 0.9em;
 	}
 
 	span {
 		width: 100%;
-	}
-
-	.heading--black {
-		font-size: var(--smaller-heading-font-size);
-	}
-
-	.second__heading {
-		font-size: var(--smaller-heading-font-size);
 	}
 }
