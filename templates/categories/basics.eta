@@ -1,21 +1,16 @@
 <section id='basics'>
-        <%~ include('profile-picture', {
-        picture: it.resume.basics.picture
-    }) %>
-    <div class="item content content__container">
+
+    <div class="item content basics__content__container">
     <div class="content__container__heading">
 
     <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
-    <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
-        <h1 class="heading--black"><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
-    <% } %>
-
+   
            <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.name, 
             value: it.resume.basics.name,
             showLabel: false,
             id: 'basics-name',
-            classes: "second__heading"
+            classes: "heading--black"
         }) %>
          <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.label, 
@@ -25,10 +20,8 @@
             classes: "second__heading"
         }) %>
     </div>
-    <div class="content__container__details">
+    <div class="basic__content__container__details">
 
-
-   
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
             value: it.resume.basics.website,
@@ -48,12 +41,28 @@
             showLabel: false,
             id: 'basics-phone'
         }) %>
-        <%~ include('key-value-item', {
+        </div>
+         <div class="basics__content__img__container">
+          <%~ include('profile-picture', {
+          picture: it.resume.basics.picture
+          }) %>
+        </div>
+    </div>
+
+    <div class="content__container">
+       <div class="content__container__heading">
+           <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
+    <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
+        <h1><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
+    <% } %>
+       </div>
+       <div class="content__container__details--gray">
+          <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
             value: it.resume.basics.summary,
             showLabel: false,
             id: 'basics-summary'
         }) %>
-        </div>
+       </div>
     </div>
 </section>

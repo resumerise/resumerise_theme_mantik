@@ -1,4 +1,6 @@
 <section id="volunteer">
+
+	
 		<div class="item content content__container">
 		<div class="content__container__heading">
 			<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.categoryTitle) { %>

@@ -1,10 +1,12 @@
 <section id="work">
+
     <div class="item content content__container">
     <div class="content__container__heading">
         <% if (it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle) { %>
         <h1><%= it.resume.settings?.labels?.categoryProperty?.work?.categoryTitle %></h1>
     <% } %>
        </div>
+
         <div class="content__container__details">
          <% it.resume?.work.forEach(function(work) { %>
 
