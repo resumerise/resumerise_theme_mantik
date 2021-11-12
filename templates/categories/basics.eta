@@ -1,7 +1,7 @@
 <section id='basics'>
 
     <div class="item content basics__content__container">
-    <div class="content__container__heading">
+    <div class="basics__content__container__heading">
 
     <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
    
@@ -51,10 +51,10 @@
 
     <div class="content__container">
        <div class="content__container__heading">
-           <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
+           <% /* <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
     <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
         <h1><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
-    <% } %>
+    <% } %> */ %>
        </div>
        <div class="content__container__details--gray">
           <%~ include('key-value-item', {

@@ -1,8 +1,8 @@
 :root {
 	--layout-padding: 4em;
-	--heading-font-size: 1.1em;
+	--second-heading--font-size: 1.4em;
+	--heading-font-size: 0.8em;
 	/* Smaller Font Size */
-	--smaller-heading-font-size: 1em;
 	--light-gray-color: #888888;
 }
 
@@ -23,7 +23,7 @@ body {
 .content__container__heading {
 	display: flex;
 	flex-direction: column;
-	font-size: var(--heading-font-size);
+	font-size: 0.8em;
 	color: var(--light-gray-color);
 	width: 12.5em;
 }
@@ -39,11 +39,22 @@ body {
 	margin-left: 10%;
 }
 
+.basics__content__container__heading {
+	display: flex;
+	flex-direction: column;
+	color: var(--light-gray-color);
+	width: 9.5em;
+}
+
+.basics__content__container__heading .heading--black {
+	font-size: 1.5em;
+}
+
 .basic__content__container__details {
 	display: flex;
 	flex-direction: column;
-	width: 30%;
-	margin-left: 6.8em;
+	width: 40%;
+	margin-left: 11%;
 	color: var(--light-gray-color);
 	height: 100%;
 }
@@ -81,14 +92,10 @@ ul {
 }
 
 li {
-	list-style: none;
+	list-style: square;
 }
 
-.second__heading {
-	font-size: var(--heading-font-size);
-	font-weight: 400;
-	color: var(--light-gray-color);
-}
+
 
 
 @media print {
@@ -112,22 +119,23 @@ li {
 }
 
 h1 {
-	font-size: 1.3em;
 	margin-top: 0;
 }
 
-h2 {
-	font-size: 1.3em;
-}
-
-/* span {
-	line-height: 2em;
+/* h2 {
+	font-size: 1em;
 } */
 
 .heading--black {
-	font-size: 1.2em;
-	font-weight: 900;
+	font-size: var(--second-heading--font-size);
+	font-weight: 600;
 	color: black;
+}
+
+.second__heading {
+	font-size: var(--second-heading--font-size);
+	font-weight: 400;
+	color: var(--light-gray-color);
 }
 
 section {
@@ -199,7 +207,6 @@ blockquote {
 }
 
 @media screen and (max-width:600px) {
-
 	.content__container__details--gray {
 		margin: 0;
 		width: 100%;
@@ -220,14 +227,21 @@ blockquote {
 		width: 100%;
 	}
 
-	.content__container__details {
-		font-size: 0.9em;
+	.basics__content__img__container {
+		order: 1;
+	}
+
+	.basics__content__container__heading {
+		width: 100%;
+		text-align: center;
+		order: 2;
 	}
 
 	.basic__content__container__details {
 		width: 100%;
 		text-align: center;
 		margin: 0;
+		order: 3;
 	}
 
 	span {
@@ -235,11 +249,21 @@ blockquote {
 	}
 
 	.heading--black {
-		font-size: var(--smaller-heading-font-size);
+		font-size: var(--second-heading--font-size);
 	}
 
 	.second__heading {
-		font-size: var(--smaller-heading-font-size);
+		font-size: var(--second-heading--font-size);
+	}
+
+	.list__items {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	li {
+		width: fit-content;
 	}
 }
 
