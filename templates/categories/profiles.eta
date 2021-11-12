@@ -1,7 +1,7 @@
 <section id="profiles">
 
-        <div class='item content content__container'>
-        <div class="content__container__heading">
+        <div class='item content content--container'>
+        <div class="content--container__heading">
             <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
         <h1>
             <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
@@ -10,7 +10,7 @@
    
   
         </div>
-        <div class="content__container__details">
+        <div class="content--container__details">
          <% it.resume.basics.profiles?.forEach(function(profile){ %>
 
                   <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id}) %>
@@ -31,7 +31,8 @@
                 label: it.resume.settings?.labels?.categoryProperty?.profile?.url, 
                 value: profile.url,
                 showLabel: false,
-                id: 'profile-url'
+                id: 'profile-url',
+                classes: "profiles--url"
             }) %>
        <% }) %>
 

@@ -1,7 +1,7 @@
 <section id="skills">
 
-		<div class="item content content__container">
-		<div class="content__container__heading">
+		<div class="item content content--container">
+		<div class="content--container__heading">
 			<% if(it.resume.settings?.labels?.categoryProperty?.skill?.categoryTitle) { %>
 		<h1>
 			<%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %>
@@ -11,7 +11,7 @@
 
 
 	   </div>
-	   <div class="content__container__details">
+	   <div class="content--container__details">
 	   	   			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.skill}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.skill?.level, 

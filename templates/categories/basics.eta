@@ -1,7 +1,7 @@
 <section id='basics'>
 
-    <div class="item content basics__content__container">
-    <div class="basics__content__container__heading">
+    <div class="item content basics__content--container">
+    <div class="basics__content--container__heading">
 
     <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
    
@@ -20,7 +20,7 @@
             classes: "second__heading"
         }) %>
     </div>
-    <div class="basic__content__container__details">
+    <div class="basic__content--container__details">
 
         <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.website, 
@@ -49,14 +49,14 @@
         </div>
     </div>
 
-    <div class="content__container">
-       <div class="content__container__heading">
+    <div class="content--container">
+       <div class="content--container__heading">
            <% /* <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work}) %>
     <% if (it.resume.settings?.labels?.categoryProperty?.basics?.categoryTitle) { %>
         <h1><%= it.resume.settings.labels.categoryProperty.basics.categoryTitle %></h1>
     <% } %> */ %>
        </div>
-       <div class="content__container__details--gray">
+       <div class="content--container__details--gray">
           <%~ include('key-value-item', {
             label: it.resume.settings?.labels?.categoryProperty?.basics?.summary, 
             value: it.resume.basics.summary,
