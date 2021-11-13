@@ -18,7 +18,7 @@
                 value: publication.name,
                 showLabel: false,
                 id: 'publication-name',
-                classes: "second__heading"
+                classes: "heading--black"
             }) %>
 
             <%~ include('key-value-item', {

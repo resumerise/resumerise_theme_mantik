@@ -19,7 +19,7 @@
                 value: profile.network,
                 showLabel: false,
                 id: 'profile-network',
-                classes: "second__heading"
+                classes: "heading--black"
             }) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.profile?.username, 

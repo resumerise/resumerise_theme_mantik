@@ -9,13 +9,13 @@
 
         <div class="content--container__details">
          <% it.resume?.work.forEach(function(work) { %>
-
         <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work, showDelete: true, id: work.id}) %>
         <% if (work.company) { %>
-        <h2 class="heading--black">
+        <h2 class="heading--black asdfasd">
             <%= work.company %>
         </h2>
         <% } %>
+        
         <%~ include('date-range', {
             formatDate: it.formatDate,
             startDate: work.startDate,
@@ -48,6 +48,7 @@
 			data: work.highlights,
             showLabel: false,
 			id: 'work-highlights',
+            classes: 'work--highlights'
 		}) %>
     <% }) %>
         

@@ -11,7 +11,7 @@
 		</style>
 	</head>
 	<body>
-		<div class="main container">
+		<div class="main container main--container">
 			<!-- BASICS -->
 			<%~ include("basic", {
 				resume: it.resume,
