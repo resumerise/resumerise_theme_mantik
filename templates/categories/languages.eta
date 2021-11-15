@@ -1,5 +1,4 @@
 <section id="languages">
-
 		<div class="item content content--container">
 		<div class="content--container__heading">
 			<% if(it.resume.settings?.labels?.categoryProperty?.language?.categoryTitle) { %>
@@ -10,14 +9,13 @@
 	</div>
 	<div class="content--container__details">
 	  <% it.resume?.languages.forEach(function(language) { %>
-
 		<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.language, showDelete: true, id: language.id}) %>
-		
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.language?.language, 
 			value: language.language,
 			showLabel: false,
-			id: 'language-language'
+			id: 'language-language',
+			classes: "heading--black"
 		}) %>
 		 <%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.language?.fluency, 
@@ -26,7 +24,6 @@
 			id: 'language-fluency'
 		 }) %>
 	<% }) %>
-
 		</div>
 	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.language}) %>

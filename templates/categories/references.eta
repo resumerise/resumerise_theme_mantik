@@ -23,6 +23,7 @@
 				value: reference.name,
 				showLabel: false,
 				id: 'reference-name',
+			    classes: "heading--black"
 			}) %>
 	     <% }) %>
 			</div>

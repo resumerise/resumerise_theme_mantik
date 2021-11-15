@@ -9,8 +9,6 @@
 	</div>
 	<div class="content--container__details">
 	<% it.resume?.awards.forEach(function(award) { %>
-	
-	
 		<%~ include('nav', {categoryKey: it.resume.settings?.categoryKeys?.award, id: award.id, showDelete: true}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.award?.title, 

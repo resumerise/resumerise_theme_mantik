@@ -10,6 +10,7 @@
 	<% it.resume?.skills.forEach(function(skill) { %>
 
 
+
 	   </div>
 	   <div class="content--container__details">
 	   	   			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.skill}) %>
@@ -20,6 +21,13 @@
 				id: 'skill-level',
 				classes: "second__heading"
 			}) %>
+			<div class="skill__name--container">
+			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.skill}) %>
+			<%~ include('key-value-item', {
+				label: it.resume.settings?.labels?.categoryProperty?.skill?.name, 
+				value: skill.name,
+			}) %>
+			</div>
 
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.keywords, 

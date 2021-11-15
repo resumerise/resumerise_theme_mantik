@@ -1,18 +1,14 @@
 <section id="volunteer">
-
-	
 		<div class="item content content--container">
-		<div class="content--container__heading">
-			<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.categoryTitle) { %>
-		<h1>
-			<%= it.resume.settings.labels.categoryProperty.volunteer.categoryTitle %>
-		</h1>
-	    <% } %>
-
-		</div>
+			<div class="content--container__heading">
+				<% if(it.resume.settings?.labels?.categoryProperty?.volunteer?.categoryTitle) { %>
+				<h1>
+					<%= it.resume.settings.labels.categoryProperty.volunteer.categoryTitle %>
+				</h1>
+			<% } %>
+			</div>
 		<div class="content--container__details">
 	    <% it.resume?.volunteer.forEach(function(volunteer) { %>
-
 			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.volunteer, showDelete: true, id: volunteer.id}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.volunteer?.organization, 
@@ -21,7 +17,6 @@
 				id: 'volunteer-organization',
 				classes: "heading--black"
 			}) %>
-
 			<%~ include('date-range', {
 				formatDate: it.formatDate,
 				startDate: volunteer.startDate,
@@ -56,8 +51,8 @@
 				showLabel: false,
 				id: 'volunteer-highlights',
 			}) %>
+			<% }) %>
 			</div>
 		</div>
-	<% }) %>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.volunteer}) %>
 </section>

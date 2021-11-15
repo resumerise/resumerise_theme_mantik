@@ -1,5 +1,4 @@
 <section id="interests">
-
 		<div class="item content content--container">
 		<div class="content--container__heading">
 			<% if(it.resume.settings?.labels?.categoryProperty?.interest?.categoryTitle) { %>
@@ -7,7 +6,6 @@
 			<%= it.resume.settings.labels.categoryProperty.interest.categoryTitle %>
 		</h1>
 	    <% } %>
-
 		</div>
 			<div class="content--container__details">
 	        <% it.resume?.interests.forEach(function(interest) { %>
@@ -28,6 +26,5 @@
 		<% }) %>
 			</div>
 		</div>
-	
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.interest}) %>
 </section>

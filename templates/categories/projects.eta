@@ -16,15 +16,10 @@
 				label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
 				value: project.title,
 				showLabel: false,
-				id: 'project-title'
+				id: 'project-title',
+			    classes: "heading--black"
 			}) %>
 				<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
-				value: project.client,
-				showLabel: false,
-				id: 'project-client'
-			}) %>
-			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
 				value: project.client,
 				showLabel: false,
