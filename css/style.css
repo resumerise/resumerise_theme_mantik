@@ -107,8 +107,8 @@ li {
   color: black !important;
 }
 
-.work--highlights {
-  margin-bottom: 2.5em;
+.entries--margin--bottom {
+  margin-bottom: 1.5em !important;
 }
 
 @media print {

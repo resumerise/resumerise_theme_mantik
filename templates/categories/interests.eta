@@ -3,7 +3,7 @@
 		<div class="content--container__heading">
 			<% if(it.resume.settings?.labels?.categoryProperty?.interest?.categoryTitle) { %>
 		<h1>
-			<%= it.resume.settings.labels.categoryProperty.interest.categoryTitle %>
+			<%= it.resume.settings.labels.categoryProperty.interest.name %>
 		</h1>
 	    <% } %>
 		</div>
@@ -15,13 +15,15 @@
 				label: it.resume.settings?.labels?.categoryProperty?.interest?.name, 
 				value: interest.name,
 				showLabel: false,
-				id: 'interest-name'
+				id: 'interest-name',
+			    classes: "entries--margin--bottom"
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.interest?.keywords, 
 				data: interest.keywords,
 				showLabel: false,
 				id: 'interest-keywords',
+				classes: "second__heading"
 			}) %>
 		<% }) %>
 			</div>

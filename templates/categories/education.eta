@@ -30,14 +30,15 @@
 				label: it.resume.settings?.labels?.categoryProperty?.education?.area, 
 				value: education.area,
 				showLabel: false,
-				id: 'education-area'
+				id: 'education-area',
+			    classes: "entries--margin--bottom"
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.education?.courses, 
 				data: education.courses,
 				showLabel: false,
 				id: 'education-courses',
-				classes: "educations__education__courses"
+				classes: "educations__education__courses second__heading"
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 

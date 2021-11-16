@@ -21,7 +21,8 @@
 			label: it.resume.settings?.labels?.categoryProperty?.language?.fluency, 
 			value: language.fluency,
 			showLabel: false,
-			id: 'language-fluency'
+			id: 'language-fluency',
+			    classes: "entries--margin--bottom"
 		 }) %>
 	<% }) %>
 		</div>

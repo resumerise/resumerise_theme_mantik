@@ -19,7 +19,7 @@
 			label: it.resume.settings?.labels?.categoryProperty?.certificate?.issuer, 
 			value: certificate.issuer,
 			showLabel: false,
-			id: 'certificate-issuer',
+			id: 'certificate-issuer'
 		}) %>
 		<%~ include('key-value-item', {
 			label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 

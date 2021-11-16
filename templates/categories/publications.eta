@@ -41,6 +41,7 @@
                 value: publication.summary,
                 showLabel: false,
                 id: 'publication-summary',
+			    classes: "entries--margin--bottom"
             }) %>
 	     <% }) %>
             </div>

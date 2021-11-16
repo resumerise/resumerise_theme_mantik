@@ -17,6 +17,7 @@
 				value: reference.reference,
 				showLabel: false,
 				id: 'reference-reference',
+			    classes: "entries--margin--bottom"
 			}) %>
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.reference?.name, 

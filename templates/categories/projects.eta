@@ -44,24 +44,28 @@
 				value: project.website,
 				showLabel: false,
 				id: 'project-website',
+			    classes: "entries--margin--bottom"
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.products, 
 				data: project.products,
 				showLabel: false,
 				id: 'project-products',
+				classes: "second__heading"
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.roles, 
 				data: project.roles,
 				showLabel: false,
 				id: 'project-roles',
+				classes: "second__heading"
 			}) %>
 			<%~ include('list', {
 				label: it.resume.settings?.labels?.categoryProperty?.project?.highlights, 
 				data: project.highlights,
 				showLabel: false,
 				id: 'project-highlights',
+				classes: "second__heading"
 			}) %>
 				<% }) %>
 			</div>

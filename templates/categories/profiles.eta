@@ -28,7 +28,7 @@
                 value: profile.url,
                 showLabel: false,
                 id: 'profile-url',
-                classes: "profiles--url"
+                classes: "profiles--url entries--margin--bottom"
             }) %>
        <% }) %>
             </div>

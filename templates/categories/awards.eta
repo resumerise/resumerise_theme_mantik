@@ -34,7 +34,8 @@
 			label: it.resume.settings?.labels?.categoryProperty?.award?.summary, 
 			value: award.summary,
 			showLabel: false,
-			id: 'award-summary'
+			id: 'award-summary',
+			classes: "entries--margin--bottom"
 		}) %>
 	<% }) %>
 	</div>

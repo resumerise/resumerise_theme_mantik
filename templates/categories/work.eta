@@ -45,7 +45,7 @@
                 data: work.highlights,
                 showLabel: false,
                 id: 'work-highlights',
-                classes: 'work--highlights'
+                classes: 'entries--margin--bottom second__heading'
             }) %>
             <% }) %>
         </div>
