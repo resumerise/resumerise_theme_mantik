@@ -1,50 +1,38 @@
 <section id="publications">
-        <div class="item content content--container">
-        <div class="content--container__heading">
-	    <% if(it.resume.settings?.labels?.categoryProperty?.publication?.categoryTitle) { %>
-		<h1>
-		    <%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %>
-		</h1>
-	    <% } %>
-        </div>
-        <div class="content--container__details">
-	     <% it.resume?.publications.forEach(function(publication) { %>
-            <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true}) %>
+    <div class="entry__heading">
+        <% if(it.resume.settings?.labels?.categoryProperty?.publication?.categoryTitle) { %>
+            <h1>
+                <%= it.resume.settings.labels.categoryProperty.publication.categoryTitle %>
+            </h1>
+        <% } %>
+    </div>
+    <div class="entry__details">
+        <% it.resume?.publications.forEach(function(publication) { %>
+        <div class="entry__content">
+            <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.publication, id: publication.id, showDelete: true
+                }) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.name, 
                 value: publication.name,
-                showLabel: false,
-                id: 'publication-name',
-                classes: "heading--black"
+                classes: "entry__title"
             }) %>
-
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.publisher, 
-                value: publication.publisher,
-                showLabel: false,
-                id: 'publication-publisher',
-            }) %>
+                value: publication.publisher
+                }) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.releaseDate, 
-                value: it.formatDate(publication.releaseDate, it.resume.settings),
-                showLabel: false,
-                id: 'publication-releaseDate',
-            }) %>
-            <%~ include('key-value-item', {
+                value: it.formatDate(publication.releaseDate, it.resume.settings)}) %>
+            <%~ include('key-url-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.website, 
-                value: publication.website,
-                showLabel: false,
-                id: 'publication-website',
-            }) %>
+                value: publication.website
+                }) %>
             <%~ include('key-value-item', {
                 label: it.resume.settings?.labels?.categoryProperty?.publication?.summary, 
-                value: publication.summary,
-                showLabel: false,
-                id: 'publication-summary',
-			    classes: "entries--margin--bottom"
-            }) %>
-	     <% }) %>
-            </div>
+                value: publication.summary
+                }) %>
         </div>
+        <% }) %>
+    </div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.publication}) %>
 </section>

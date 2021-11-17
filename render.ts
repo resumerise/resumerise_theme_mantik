@@ -8,6 +8,9 @@ import {
   getWidgetDateRangeFilePath,
   getWidgetKeyValuePairFilePath,
   getWidgetListFilePath,
+  getWidgetKeyUrlPairFilePath,
+  getWidgetKeyMailPairFilePath,
+  getProfileItem
 } from "resumerise_library/mod.ts";
 import { Resume } from "resumerise_library/codegen/model/resume.ts";
 import { format } from "https://deno.land/std@0.102.0/datetime/mod.ts";
@@ -188,6 +191,30 @@ export const render = async (
       keyValueTemplateName,
       eta.compile(
         await getWidgetKeyValuePairFilePath(),
+      ),
+    );
+
+    const keyMailTemplateName = "key-mail-item";
+    eta.templates.define(
+      keyMailTemplateName,
+      eta.compile(
+        await getWidgetKeyMailPairFilePath(),
+      ),
+    );
+
+    const keyUrlTemplateName = "key-url-item";
+    eta.templates.define(
+      keyUrlTemplateName,
+      eta.compile(
+        await getWidgetKeyUrlPairFilePath(),
+      ),
+    );
+
+    const profileItemName = "profile-item";
+    eta.templates.define(
+      profileItemName,
+      eta.compile(
+        await getProfileItem(),
       ),
     );
 

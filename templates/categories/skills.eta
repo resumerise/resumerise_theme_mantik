@@ -1,43 +1,31 @@
 <section id="skills">
-
-		<div class="item content content--container">
-		<div class="content--container__heading">
-			<% if(it.resume.settings?.labels?.categoryProperty?.skill?.categoryTitle) { %>
-		<h1>
-			<%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %>
-		</h1>
-	   <% } %>
-	<% it.resume?.skills.forEach(function(skill) { %>
-
-
-
-	   </div>
-	   <div class="content--container__details">
-	   	   			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.skill}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.skill?.level, 
-				value: skill.level,
-				showLabel: false,
-				id: 'skill-level',
-				classes: "second__heading"
-			}) %>
-			<div class="skill__name--container">
-			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.skill}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.skill?.name, 
-				value: skill.name,
-			}) %>
+	<div class="entry__heading">
+		<% if(it.resume.settings?.labels?.categoryProperty?.skill?.categoryTitle) { %>
+			<h1>
+				<%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %>
+			</h1>
+		<% } %>
+	</div>
+	<div class="entry__details">
+		<% it.resume?.skills.forEach(function(skill) { %>
+			<div class="entry__content">
+				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.skill
+                }) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.skill?.name, 
+					value: skill.name,
+					classes: "entry__title"
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.skill?.level, 
+					value: skill.level,
+				}) %>
+				<%~ include('list', {
+					label: it.resume.settings?.labels?.categoryProperty?.project?.keywords, 
+					data: skill.keywords
+				}) %>
 			</div>
-
-			<%~ include('list', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.keywords, 
-				data: skill.keywords,
-				showLabel: false,
-				id: 'project-keywords',
-				classes: "second__heading"
-			}) %>
-			</div>
-		</div>
-	<% }) %>
+		<% }) %>
+	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.skill}) %>
 </section>
