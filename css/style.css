@@ -111,9 +111,21 @@ li {
   }
 }
 
-/* .entry__content {
-  margin-top: var(--entry-content-margin);
-}  */
+.key-url-item,
+.key-mail-item,
+.key-value-item {
+	display: flex;
+	flex-direction: row;
+	column-gap: 1em;
+	justify-content: start;
+    align-items: center;
+    align-content: center;
+}
+
+.item__icon {
+	margin-right: 0;
+	width: 0.6em;
+}
 
 .container {
   text-align: left;
@@ -141,8 +153,16 @@ h1 {
   flex-direction: row;
 }
 
+.profiles .profile-item {
+  margin-right: 0.4em;
+}
+
 section {
   margin-bottom: 2em;
+}
+
+a {
+  color: rgb(150, 150, 150);
 }
 
 blockquote {
@@ -153,14 +173,12 @@ blockquote {
 .key-value-item {
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
   justify-content: flex-start;
 }
 
 .key-value-item label, .key-list-item label {
   white-space: nowrap;
   color: gainsboro;
-  margin-right: 5px;
 }
 
 .key-list-item {
@@ -190,7 +208,7 @@ blockquote {
   margin-bottom: 2cm;
 }
 
-.picture img {
+.home__img {
   border-radius: 50%;
 }
 
@@ -206,7 +224,8 @@ blockquote {
   }
 
   .basics__details {
-    width: 60%;
+    width: 100%;
+    align-items: center;
   }
 
   .basics {
@@ -257,7 +276,6 @@ blockquote {
     width: 100%;
   }
   .basics__picture {
-    height: 200%;
     order: 1;
   }
   .basics__picture .picture {
@@ -267,12 +285,12 @@ blockquote {
     width: 100%;
     text-align: center;
     grid-area: name;
-    margin: 25% 0 0 0;
+    margin: 3em 0;
   }
   .basics__details {
     width: 100%;
     text-align: center;
-    margin: 0;
+    margin-bottom: 2em;
   }
   span {
     width: 100%;

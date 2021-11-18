@@ -1,6 +1,6 @@
 <section id="certifications">
 	<div class="entry__heading">
-		<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
+	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
 		<h1><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h1>
 	<% } %>
 	</div>
