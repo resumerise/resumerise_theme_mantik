@@ -111,9 +111,9 @@ li {
   }
 }
 
-.entry__content {
-  margin-bottom: var(--entry-content-margin);
-}
+/* .entry__content {
+  margin-top: var(--entry-content-margin);
+}  */
 
 .container {
   text-align: left;
@@ -199,6 +199,12 @@ blockquote {
 }
 
 @media screen and (max-width: 950px) {
+
+  .education__gpa__container {
+    display: flex;
+    justify-content: center;
+  }
+
   .basics__details {
     width: 60%;
   }
@@ -241,38 +247,33 @@ blockquote {
     text-align: center;
     width: 100%;
   }
-  
   .entry__heading {
-    width: var(--left-column-width);
+    width: 100%;
     text-align: center;
   }
-
   .entry__details {
     margin: 0;
     text-align: center;
     width: 100%;
   }
-
   .basics__picture {
     height: 200%;
     order: 1;
   }
-
   .basics__picture .picture {
     height: 100%;
   }
-
   .basics__heading {
     width: 100%;
     text-align: center;
     grid-area: name;
+    margin: 25% 0 0 0;
   }
-
   .basics__details {
+    width: 100%;
     text-align: center;
     margin: 0;
   }
-  
   span {
     width: 100%;
   }
@@ -280,7 +281,7 @@ blockquote {
     font-size: var(--category-entry-font-size);
   }
   .entry__subtitle {
-    font-size: var(--category-entry-font-size);
+    font-size: 1.1em;
   }
   .list__items {
     display: flex;
@@ -290,8 +291,16 @@ blockquote {
   li {
     width: fit-content;
   }
+  label {
+    width: 100%;
+  }
   .profiles--url {
     word-wrap: break-word;
+  }
+
+  .profiles .entry__details {
+    display: flex;
+    justify-content: center;
   }
 }
 

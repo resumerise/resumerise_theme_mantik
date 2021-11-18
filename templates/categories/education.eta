@@ -37,11 +37,14 @@
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.education?.studyType, 
 				value: education.studyType,}) %>
+			<div class="education__gpa__container">
+
 			<%~ include('key-value-item', {
 				label: it.resume.settings?.labels?.categoryProperty?.education?.gpa, 
 				value: education.gpa,
 				showLabel: true
 				}) %>
+			</div>
 		</div>
 		<% }) %>
 	</div>
