@@ -18,7 +18,6 @@
 				label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
 				value: project.client,}) %>
 			<%~ include('date-range', {
-				formatDate: it.formatDate,
 				startDate: project.startDate,
 				endDate: project.endDate,
 				present: project.present,

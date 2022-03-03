@@ -16,8 +16,7 @@
 				value: education.institution,
 				classes: "entry__title"
 			}) %>	
-			<%~ include('date-range', {
-				formatDate: it.formatDate, 
+			<%~ include('date-range', { 
 				startDate: education.startDate,
 				endDate: education.endDate,
 				present: education.present,
