@@ -1,28 +1,22 @@
 import * as eta from "https://deno.land/x/eta@v1.6.0/mod.ts";
 import {
-  CompileException,
   getAddItemTemplatePath,
-  getFileContent,
   getNavTemplatePath,
+  getProfileItem,
   getWidgetCSSFilePath,
   getWidgetDateRangeFilePath,
+  getWidgetKeyMailPairFilePath,
+  getWidgetKeyUrlPairFilePath,
   getWidgetKeyValuePairFilePath,
   getWidgetListFilePath,
-  getWidgetKeyUrlPairFilePath,
-  getWidgetKeyMailPairFilePath,
-  getProfileItem
-} from "resumerise_library/mod.ts";
-import { Resume } from "resumerise_library/codegen/model/resume.ts";
-import { format } from "https://deno.land/std@0.102.0/datetime/mod.ts";
-import { Settings } from "resumerise_library/codegen/model/settings.ts";
+  getWidgetSkillListFilePath,
+} from "./theme-library.ts";
 
-function formatDate(timestamp: string, settings: Settings) {
-  try {
-    return format(new Date(timestamp), settings?.dateFormat!);
-  } catch (e) {
-    console.log(`Date could not be formatted ${e}`);
-  }
-}
+import {
+  Resume,
+  CompileException,
+  getFileContent
+} from "./core-library.ts";
 
 export const render = async (
   resume: Resume,
@@ -33,8 +27,7 @@ export const render = async (
       "./templates/layout.eta",
       import.meta.url,
     );
-    const css = await getFileContent("./css/style.css", import.meta.url);
-
+    const mainCss = await getFileContent("./css/main.css", import.meta.url);
     const awardTemplateName = "awards";
     eta.templates.define(
       awardTemplateName,
@@ -178,11 +171,44 @@ export const render = async (
       ),
     );
 
+    const coverTemplate = "cover";
+    eta.templates.define(
+      coverTemplate,
+      eta.compile(
+        await getFileContent(
+          "./templates/cover.eta",
+          import.meta.url,
+        ),
+      ),
+    );
+
+    const tocTemplate = "toc";
+    eta.templates.define(
+      tocTemplate,
+      eta.compile(
+        await getFileContent(
+          "./templates/toc.eta",
+          import.meta.url,
+        ),
+      ),
+    );
+
     const dateRangeTemplateName = "date-range";
     eta.templates.define(
       dateRangeTemplateName,
       eta.compile(
         await getWidgetDateRangeFilePath(),
+      ),
+    );
+
+    const ratingTemplateName = "skill-rating";
+    eta.templates.define(
+      ratingTemplateName,
+      eta.compile(
+        await getFileContent(
+          "./templates/widgets/rating.eta",
+          import.meta.url,
+        ),
       ),
     );
 
@@ -223,6 +249,14 @@ export const render = async (
       listTemplateName,
       eta.compile(
         await getWidgetListFilePath(),
+      ),
+    );
+
+    const skillListTemplateName = "skillList";
+    eta.templates.define(
+      skillListTemplateName,
+      eta.compile(
+        await getWidgetSkillListFilePath(),
       ),
     );
 
@@ -289,9 +323,8 @@ export const render = async (
       orderedMap.set(resumeCategory, map.get(resumeCategory)!);
     });
     const result = await eta.render(layout, {
-      css: css,
+      mainCss: mainCss,
       widgetCss: widgetCss,
-      formatDate: formatDate,
       resume: resume,
       type: type,
       templates: Array.from(orderedMap.values()).filter((item) => !!item),
