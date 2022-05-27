@@ -9,14 +9,25 @@
 		<div class="entry__content">
 			<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.project, showDelete: true, id: project.id
                 }) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
-				value: project.title,
-				classes: "entry__title"
-			}) %>
-			<%~ include('key-value-item', {
-				label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
-				value: project.client,}) %>
+			<div class="header-flex">
+				<div>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
+						value: project.title,
+						classes: "entry__title"
+					}) %>
+					<%~ include('key-value-item', {
+						label: it.resume.settings?.labels?.categoryProperty?.project?.client, 
+						value: project.client,}) %>
+				</div>
+				<div>
+					<% if (project.logo) { %>
+						<div class="article__img">
+							<img src="<%~ project.logo %>">
+						</div>
+					<% } %>
+				</div>
+			</div>
 			<%~ include('date-range', {
 				startDate: project.startDate,
 				endDate: project.endDate,
@@ -45,6 +56,21 @@
 				data: project.highlights,
 				showLabel: true
 			}) %>
+			<% if (project.otherUrls) { %>
+				<div class="article__list other-urls">
+					<label class="list__label">
+						<%= it.resume.settings?.labels?.otherUrls %>
+					</label>
+					<ul>
+						<% project.otherUrls.forEach(function(link){ %>
+							<li>
+								<div><%= link.label %></div>
+								<div><a class="article__url" href="<%= link.url %>"><%= link.url %></a></div>
+							</li>
+						<% }) %>
+					</ul>
+				</div>
+			<% } %>
 		</div>
 	<% }) %>
 	</div>

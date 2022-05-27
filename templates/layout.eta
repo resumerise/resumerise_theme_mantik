@@ -49,60 +49,68 @@
 			<%~ include("basic", {
 				resume: it.resume
 			}) %>
-			
-			<!-- BASICS -->
-			<%~ include("basic", {
-				resume: it.resume
-			}) %>
+
 			<!-- WORK -->
 			<div class="counter-reset"></div>
 			<%~ include("work", {
 				resume: it.resume
 			}) %>
+
 			<!-- PROJECT -->
 			<%~ include("project", {
 				resume: it.resume
 			}) %>
+
 			<!-- EDUCATION -->
 			<%~ include("education", {
 				resume: it.resume
 			}) %>
+
 			<!-- AWARDS -->
 			<%~ include("awards", {
 				resume: it.resume
 			}) %>
+
 			<!-- PUBLICATION -->
 			<%~ include("publication", {
 				resume: it.resume
 			}) %>
+
 			<!-- REFERENCE -->
 			<%~ include("reference", {
 				resume: it.resume
 			}) %>
+
 			<!-- SKILLS -->
 			<%~ include("skills", {
 				resume: it.resume
 			}) %>
+
 			<!-- INTEREST -->
 			<%~ include("interest", {
 				resume: it.resume
 			}) %>
+
 			<!-- LANGUAGE -->
 			<%~ include("language", {
 				resume: it.resume
 			}) %>
+
 			<!-- VOLUNTEER -->
 			<%~ include("volunteer", {
 				resume: it.resume
 			}) %>
+
 			<!-- CERTIFICATION -->
 			<%~ include("certification", {
 				resume: it.resume
 			}) %>
+
 			<!-- PROFILE -->
 			<%~ include("profile", {
 				resume: it.resume
 			}) %>
+			
 		</div>
 
 		<script>

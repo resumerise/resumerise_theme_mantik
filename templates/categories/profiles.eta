@@ -13,7 +13,8 @@
                 }) %>
                 <%~ include('profile-item', {
                     label: profile.network,
-                    url: profile.url
+                    url: profile.url,
+                    classes: 'fab'
                 }) %>
             </div>
         <% }) %>

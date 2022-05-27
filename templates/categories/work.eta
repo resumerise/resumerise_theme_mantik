@@ -9,21 +9,32 @@
             <div class="entry__content">
                 <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.work, showDelete: true, id: work.id
                 }) %>
-                    <%~ include('key-value-item', {
-                    label: it.resume.settings?.labels?.categoryProperty?.work?.company, 
-                    value: work.company,
-                    classes: 'entry__title'
-                }) %>
+                <div class="header-flex">
+                    <div>
+                        <%~ include('key-value-item', {
+                            label: it.resume.settings?.labels?.categoryProperty?.work?.company, 
+                            value: work.company,
+                            classes: 'entry__title'
+                        }) %>
+                        <%~ include('key-value-item', {
+                            label: it.resume.settings?.labels?.categoryProperty?.work?.position, 
+                            value: work.position,
+                            classes: "entry__subtitle"
+                        }) %>
+                    </div>
+                    <div>
+                        <% if (work.logo) { %>
+                            <div class="article__img">
+                                <img src="<%~ work.logo %>">
+                            </div>
+                        <% } %>
+                    </div>
+                </div>
                 <%~ include('date-range', {
                     startDate: work.startDate,
                     endDate: work.endDate,
                     present: work.present,
                     settings: it.resume.settings,
-                    classes: "entry__subtitle"
-                }) %>
-                <%~ include('key-value-item', {
-                    label: it.resume.settings?.labels?.categoryProperty?.work?.position, 
-                    value: work.position,
                     classes: "entry__subtitle"
                 }) %>
                 <%~ include('key-url-item', {

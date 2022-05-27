@@ -7,24 +7,31 @@
 		<% } %>
 	</div>
 	<div class="entry__details">
-		<% it.resume?.skills.forEach(function(skill) { %>
-			<div class="entry__content">
-				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.skill
-                }) %>
+		<% Object.entries(it.resume?.skills.reduce(function (r, a) { r[a.category] = r[a.category] || []; r[a.category].push(a); return r; }, Object.create(null))).forEach(([category, data]) => { %>
+			<article>
 				<%~ include('key-value-item', {
-					label: it.resume.settings?.labels?.categoryProperty?.skill?.name, 
-					value: skill.name,
-					classes: "entry__title"
+					value: category,
+					classes: 'article__title s-at'
 				}) %>
-				<%~ include('key-value-item', {
-					label: it.resume.settings?.labels?.categoryProperty?.skill?.level, 
-					value: skill.level,
-				}) %>
-				<%~ include('list', {
-					label: it.resume.settings?.labels?.categoryProperty?.project?.keywords, 
-					data: skill.keywords
-				}) %>
-			</div>
+
+				<div class="article-content grid s-c no-m">
+					<% data.forEach(function(skill) { %>
+						<div class="skills__progress grid">
+							<%~ include('key-value-item', {
+								value: skill.name,
+								classes: 'article__skills-title'
+							}) %>
+							<%~ include('skill-rating', {
+								percentage: Math.ceil(100/5 * skill.level)
+							}) %>
+							<%~ include('list', {
+								data: skill.keywords,
+								classes: 'article__list'
+							}) %>
+						</div>
+					<% }) %>
+				</div>
+			</article>
 		<% }) %>
 	</div>
 	<%~ include('add', {categoryKey: it.resume?.settings?.categoryKeys?.skill}) %>

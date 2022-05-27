@@ -12,13 +12,13 @@
 				<%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.reference, id: reference.id, showDelete: true
                 }) %>
 				<%~ include('key-value-item', {
-					label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
-					value: reference.reference,
-				}) %>
-				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.reference?.name, 
 					value: reference.name,
 					classes: "entry__title"
+				}) %>
+				<%~ include('key-value-item', {
+					label: it.resume.settings?.labels?.categoryProperty?.reference?.reference, 
+					value: reference.reference,
 				}) %>
 			</div>
 	<% }) %>
