@@ -12,15 +12,11 @@ import {
   getWidgetSkillListFilePath,
 } from "./theme-library.ts";
 
-<<<<<<< HEAD
-import { CompileException, getFileContent, Resume } from "./core-library.ts";
-=======
 import {
   Resume,
   CompileException,
   getFileContent
 } from "./core-library.ts";
->>>>>>> initial_changes
 
 export const render = async (
   resume: Resume,
