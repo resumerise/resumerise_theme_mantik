@@ -1,6 +1,6 @@
 <section id='location'>
     <% if (it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle) { %>
-        <h1><%= it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle %></h1>
+        <header><%= it.resume.settings?.labels?.categoryProperty?.location?.categoryTitle %></header>
     <% } %>
     <div class="entry">
         <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.location

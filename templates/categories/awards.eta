@@ -1,9 +1,9 @@
 <section id="awards">
 	<div class="entry__heading">
 		<% if(it.resume.settings?.labels?.categoryProperty?.award?.categoryTitle) { %>
-		<h1>
+		<header>
 			<%= it.resume.settings.labels.categoryProperty.award.categoryTitle %>
-		</h1>
+		</header>
 		<% } %>
 	</div>
 	
@@ -15,7 +15,7 @@
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.award?.title, 
 					value: award.title,
-					classes: "entry__title"
+					classes: "entry__title article__title"
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.award?.date, 

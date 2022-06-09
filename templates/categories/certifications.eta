@@ -1,7 +1,7 @@
 <section id="certifications">
 	<div class="entry__heading">
 	<% if (it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle) { %>
-		<h1><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></h1>
+		<header><%= it.resume.settings?.labels?.categoryProperty?.certificate?.categoryTitle %></header>
 	<% } %>
 	</div>
 	<div class="entry__details">
@@ -12,7 +12,7 @@
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.certificate?.title, 
 					value: certificate.title,
-					classes: "entry__title"
+					classes: "entry__title article__title"
 				}) %>
 				<%~ include('key-value-item', {
 					label: it.resume.settings?.labels?.categoryProperty?.certificate?.issueDate, 

@@ -1,7 +1,7 @@
 <section id="project">
 	<div class="entry__heading">
 		<% if (it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle) { %>
-			<h1><%= it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle %></h1>
+			<header><%= it.resume.settings?.labels?.categoryProperty?.project?.categoryTitle %></header>
 		<% } %>
 	</div>
 	<div class="entry__details">
@@ -14,7 +14,7 @@
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.project?.title, 
 						value: project.title,
-						classes: "entry__title"
+						classes: "entry__title article__title"
 					}) %>
 					<%~ include('key-value-item', {
 						label: it.resume.settings?.labels?.categoryProperty?.project?.client, 

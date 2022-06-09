@@ -1,9 +1,9 @@
 <section id="skills">
 	<div class="entry__heading">
 		<% if(it.resume.settings?.labels?.categoryProperty?.skill?.categoryTitle) { %>
-			<h1>
+			<header>
 				<%= it.resume.settings.labels.categoryProperty.skill.categoryTitle %>
-			</h1>
+			</header>
 		<% } %>
 	</div>
 	<div class="entry__details">
@@ -11,7 +11,7 @@
 			<article>
 				<%~ include('key-value-item', {
 					value: category,
-					classes: 'article__title s-at'
+					classes: 'entry__title article__title s-at'
 				}) %>
 
 				<div class="article-content grid s-c no-m">
