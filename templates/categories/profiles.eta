@@ -1,16 +1,14 @@
 <section id="profiles" class="profiles">
     <div class="entry__heading">
     <% if(it.resume.settings?.labels?.categoryProperty?.profile?.categoryTitle) { %>
-        <h1>
-            <%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %>
-        </h1>
+        <header><%= it.resume.settings.labels.categoryProperty.profile.categoryTitle %></header>
     <% } %>
     </div>
-    <div class="entry__details">
+    
+    <div class="entry__details article-container">
         <% it.resume.basics.profiles?.forEach(function(profile){ %>
             <div class="entry__content">
-                <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id
-                }) %>
+                <%~ include('nav', {categoryKey: it.resume?.settings?.categoryKeys?.profile, showDelete: true, id: profile.id }) %>
                 <%~ include('profile-item', {
                     label: profile.network,
                     url: profile.url,

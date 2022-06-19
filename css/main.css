@@ -56,7 +56,7 @@ section {
   width: var(--left-column-width);
 }
 
-.entry__heading h1 {
+.entry__heading header {
   font-size: var(--category-font-size);
   font-weight: 400;
 }
@@ -373,12 +373,36 @@ blockquote {
   content: "\f099";
 }
 
+.icon.github:before {
+  content: "\f09b";
+}
+
 .icon.facebook:before {
   content: "\f39e";
 }
 
+.icon.instagram:before {
+  content: "\f16d";
+}
+
+.icon.xing:before {
+  content: "\f168";
+}
+
+.icon.behance:before {
+  content: "\f39e";
+}
+
+.icon.dribbble:before {
+  content: "\f17d";
+}
+
+.icon.medium:before {
+  content: "\f23a";
+}
+
 .icon.linkedin:before {
-  content: "\f0e1";
+  content: "\f08c";
 }
 
 /* SCROLLBAR */
@@ -406,6 +430,7 @@ blockquote {
   .entry__heading {
     width: 100%;
     text-align: center;
+    margin-bottom: 1rem;
   }
 }
 
